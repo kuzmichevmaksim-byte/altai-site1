@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Алтай в июле — тур по местам силы | Телецкое озеро</title>
   <meta name="description" content="Алтай в июле: тур по местам силы на Телецком озере. Практики, медитации, трансформационная игра Лила, природа и отдых в спокойном ритме." />
+
   <style>
     * {
       box-sizing: border-box;
@@ -226,10 +228,6 @@
       box-shadow: 0 18px 50px rgba(13, 43, 58, 0.16);
     }
 
-    .about-img {
-      background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80');
-    }
-
     .list {
       display: grid;
       gap: 14px;
@@ -246,31 +244,6 @@
 
     .places {
       background: #eef5f7;
-    }
-
-    .practices {
-      background: #17384a;
-      color: #fff;
-    }
-
-    .practices .section-title,
-    .practices .section-text {
-      color: #fff;
-    }
-
-    .practice {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.16);
-      color: #fff;
-    }
-
-    .practice h3,
-    .practice p {
-      color: #fff;
-    }
-
-    .program {
-      background: #dfecef;
     }
 
     .highlight {
@@ -296,7 +269,7 @@
       overflow: hidden;
       border-radius: 30px;
       box-shadow: 0 18px 50px rgba(13, 43, 58, 0.18);
-      background: #fff;
+      background: #09202d;
     }
 
     .gallery-track {
@@ -306,9 +279,12 @@
 
     .gallery-track img {
       min-width: 100%;
-      height: 620px;
-      object-fit: cover;
+      width: 100%;
+      height: clamp(320px, 62vw, 680px);
+      object-fit: contain;
+      object-position: center;
       display: block;
+      background: #09202d;
     }
 
     .gallery-btn {
@@ -334,6 +310,27 @@
 
     .gallery-btn.next {
       right: 18px;
+    }
+
+    .practices {
+      background: #17384a;
+      color: #fff;
+    }
+
+    .practices .section-title,
+    .practices .section-text {
+      color: #fff;
+    }
+
+    .practice {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: #fff;
+    }
+
+    .practice h3,
+    .practice p {
+      color: #fff;
     }
 
     .date-box {
@@ -404,7 +401,44 @@
       text-align: center;
     }
 
+    @media (max-width: 1100px) {
+      .intro-grid,
+      .important-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .places-grid,
+      .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 960px) {
+      header {
+        padding: 18px 0;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .phone {
+        display: none;
+      }
+
+      .hero {
+        min-height: 92vh;
+        padding: 110px 0 60px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
       .intro-grid,
       .places-grid,
       .important-grid,
@@ -415,16 +449,154 @@
         grid-template-columns: 1fr;
       }
 
-      .phone {
-        display: none;
+      .card,
+      .place,
+      .practice,
+      .form-box,
+      .date-box {
+        padding: 22px;
+        border-radius: 22px;
       }
 
       .image-box {
         min-height: 340px;
       }
+
+      .gallery-track img {
+        height: clamp(300px, 88vw, 520px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 1;
+      }
+
+      .section-title {
+        font-size: 31px;
+      }
+
+      .section-text {
+        font-size: 16px;
+        margin-bottom: 28px;
+      }
+
+      .badge {
+        font-size: 14px;
+        padding: 7px 12px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 18px;
+      }
+
+      .hero {
+        min-height: 88vh;
+        padding: 96px 0 48px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .card span,
+      .place span,
+      .practice span {
+        font-size: 30px;
+      }
+
+      .card h3,
+      .place h3,
+      .practice h3 {
+        font-size: 20px;
+      }
+
+      .list div {
+        font-size: 15px;
+      }
+
+      .highlight {
+        padding: 22px;
+        font-size: 17px;
+        border-radius: 22px;
+      }
+
+      .image-box {
+        min-height: 260px;
+        border-radius: 22px;
+      }
+
+      .gallery-window {
+        border-radius: 22px;
+      }
+
+      .gallery-track img {
+        height: clamp(260px, 92vw, 430px);
+      }
+
+      .gallery-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 34px;
+      }
+
+      .gallery-btn.prev {
+        left: 10px;
+      }
+
+      .gallery-btn.next {
+        right: 10px;
+      }
+
+      .date-box strong {
+        font-size: 28px;
+      }
+
+      .contacts-list {
+        font-size: 17px;
+      }
+
+      footer {
+        font-size: 14px;
+        padding: 22px 0;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .gallery-track img {
+        height: 330px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -450,22 +622,26 @@
       <div class="container">
         <h2 class="section-title">Формат путешествия</h2>
         <p class="section-text">Мы живём в одном красивом месте и исследуем всё вокруг в спокойном ритме — без дальних переездов, гонки и перегрузки.</p>
+
         <div class="intro-grid">
           <div class="card">
             <span>🌿</span>
             <h3>Отдых и перезагрузка</h3>
             <p>Мягкий ритм, природа, тишина и пространство для себя.</p>
           </div>
+
           <div class="card">
             <span>👥</span>
             <h3>Небольшая группа</h3>
             <p>Внимание каждому участнику и тёплая атмосфера.</p>
           </div>
+
           <div class="card">
             <span>🧘</span>
             <h3>Практики</h3>
             <p>Медитации, индивидуальная работа и духовные практики Ирины.</p>
           </div>
+
           <div class="card">
             <span>🏔️</span>
             <h3>Места силы</h3>
@@ -480,6 +656,7 @@
         <div>
           <h2 class="section-title">Телецкое озеро</h2>
           <p class="section-text">Одно из самых глубоких и чистых озёр России, окружённое горами и тайгой. Здесь легко замедлиться, услышать себя и почувствовать силу природы.</p>
+
           <div class="list">
             <div>🚤 Прогулка на катере по озеру</div>
             <div>💧 Водопады Корбу и Киште</div>
@@ -487,6 +664,7 @@
             <div>⛰ Смотровые точки с панорамами озера</div>
           </div>
         </div>
+
         <div class="image-box" aria-label="Телецкое озеро"></div>
       </div>
     </section>
@@ -495,38 +673,45 @@
       <div class="container">
         <h2 class="section-title">Локации и впечатления</h2>
         <p class="section-text">В программе — красивые природные места, мягкие прогулки, практики и живое соприкосновение с Алтаем.</p>
+
         <div class="places-grid">
           <div class="place">
             <span>🌲</span>
             <h3>300-летний кедр</h3>
             <p>Рядом — святой источник преподобного Макария, освящённый в 1830 году. Сакральное и сильное место.</p>
           </div>
+
           <div class="place">
             <span>⛰</span>
             <h3>Гора Тилан-Туу</h3>
             <p>Одна из лучших смотровых площадок на Телецкое озеро. Рядом уютная чайная, где хочется задержаться.</p>
           </div>
+
           <div class="place">
             <span>💧</span>
             <h3>Водопады Третьей речки</h3>
             <p>Экотропа через лес и воду. Красивый маршрут наедине с природой — тот самый момент «вау».</p>
           </div>
+
           <div class="place">
             <span>🚠</span>
             <h3>Канатная дорога</h3>
             <p>Подъём с панорамными видами и лёгкие прогулки по экотропе наверху.</p>
           </div>
+
           <div class="place">
             <span>🪨</span>
             <h3>Каменные грибы</h3>
             <p>Уникальное природное место. При доступности по сезону можно организовать экскурсию по желанию.</p>
           </div>
+
           <div class="place">
             <span>🖼</span>
             <h3>Артыбаш</h3>
             <p>Атмосферная галерея изделий местных мастеров и знакомство с творческой стороной Алтая.</p>
           </div>
         </div>
+
         <div class="highlight">Это путешествие не про спешку. Оно про баланс: практика, отдых, природа, внимание к себе и красота вокруг.</div>
       </div>
     </section>
@@ -538,6 +723,7 @@
 
         <div class="gallery-slider">
           <button class="gallery-btn prev" type="button" aria-label="Предыдущее фото">‹</button>
+
           <div class="gallery-window">
             <div class="gallery-track">
               <img src="images/group-1.jpg" alt="Группа в горах Алтая">
@@ -549,6 +735,7 @@
               <img src="images/group-2.jpg" alt="Участники тура на Алтае">
             </div>
           </div>
+
           <button class="gallery-btn next" type="button" aria-label="Следующее фото">›</button>
         </div>
       </div>
@@ -558,17 +745,20 @@
       <div class="container">
         <h2 class="section-title">Практики в туре</h2>
         <p class="section-text">Программа создана для мягкой внутренней перезагрузки и глубокого контакта с собой.</p>
+
         <div class="program-grid">
           <div class="practice">
             <span>✨</span>
             <h3>Духовные практики Ирины</h3>
             <p>Практики, медитации и работа в местах силы Алтая.</p>
           </div>
+
           <div class="practice">
             <span>💫</span>
             <h3>Индивидуальная работа</h3>
             <p>Внимание к каждому участнику и личный формат взаимодействия.</p>
           </div>
+
           <div class="practice">
             <span>🎲</span>
             <h3>Игра «Лила»</h3>
@@ -583,13 +773,34 @@
         <div>
           <h2 class="section-title">Что важно</h2>
           <p class="section-text">Тур подойдёт тем, кто хочет не просто посмотреть Алтай, а прожить его глубже — через природу, тишину, практики и общение.</p>
+
           <div class="important-grid">
-            <div class="card"><span>🤍</span><h3>Внимание</h3><p>Каждому участнику.</p></div>
-            <div class="card"><span>🌿</span><h3>Баланс</h3><p>Практика / отдых / природа.</p></div>
-            <div class="card"><span>🔥</span><h3>Сила</h3><p>Энергетически сильные места.</p></div>
-            <div class="card"><span>🕊️</span><h3>Лёгкость</h3><p>Без перегрузки и дальних переездов.</p></div>
+            <div class="card">
+              <span>🤍</span>
+              <h3>Внимание</h3>
+              <p>Каждому участнику.</p>
+            </div>
+
+            <div class="card">
+              <span>🌿</span>
+              <h3>Баланс</h3>
+              <p>Практика / отдых / природа.</p>
+            </div>
+
+            <div class="card">
+              <span>🔥</span>
+              <h3>Сила</h3>
+              <p>Энергетически сильные места.</p>
+            </div>
+
+            <div class="card">
+              <span>🕊️</span>
+              <h3>Лёгкость</h3>
+              <p>Без перегрузки и дальних переездов.</p>
+            </div>
           </div>
         </div>
+
         <div class="date-box">
           <strong>Июль 2026</strong>
           <p>Алтай, Телецкое озеро. Даты будут объявлены в ближайшее время. Планируется первая половина июля.</p>
@@ -604,13 +815,15 @@
         <div>
           <h2 class="section-title">Бронирование открыто</h2>
           <p class="section-text">Напишите Ирине, чтобы узнать даты, стоимость, условия участия и забронировать место в группе.</p>
+
           <div class="contacts-list">
             <p>📞 <a href="tel:+79056233047">+7 905 623-30-47</a></p>
+            <p>📲 Telegram: <a href="https://t.me/irina810k" target="_blank">@irina810k</a></p>
             <p>💫 Ирина Кузьмичева — организатор</p>
             <p>📍 Алтай | Телецкое озеро</p>
-            <p>📲 Telegram: <a href="https://t.me/irina810k" target="_blank">@irina810k</a></p>
           </div>
         </div>
+
         <form class="form-box">
           <input type="text" placeholder="Ваше имя" required />
           <input type="tel" placeholder="Телефон / WhatsApp" required />
@@ -624,6 +837,7 @@
   <footer>
     <div class="container">© 2026 Алтай | Места силы. Тур на Телецкое озеро с Ириной Кузьмичевой.</div>
   </footer>
+
   <script>
     const track = document.querySelector('.gallery-track');
     const slides = document.querySelectorAll('.gallery-track img');
@@ -636,9 +850,12 @@
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
-    prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-    nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-    setInterval(() => showSlide(currentSlide + 1), 5000);
+    if (track && slides.length && prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+      nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+      setInterval(() => showSlide(currentSlide + 1), 5000);
+    }
   </script>
 </body>
 </html>
+
