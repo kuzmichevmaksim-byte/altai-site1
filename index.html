@@ -6,6 +6,9 @@
 
   <title>Алтай в июле — Телецкое озеро | Deep Altai</title>
   <meta name="description" content="Тур по местам силы на Алтае: Телецкое озеро, практики, медитации, природа и спокойный формат путешествия." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -32,7 +35,7 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Manrope', Arial, sans-serif;
       background: var(--deep);
       color: var(--text);
       line-height: 1.55;
@@ -179,7 +182,7 @@
     }
 
     h1 {
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(54px, 7vw, 88px);
       line-height: 0.92;
       font-weight: 400;
@@ -232,7 +235,7 @@
     }
 
     .hero-form h3 {
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 27px;
       font-weight: 400;
       margin-bottom: 20px;
@@ -337,7 +340,7 @@
     }
 
     h2 {
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(38px, 5vw, 64px);
       line-height: 0.98;
       font-weight: 400;
@@ -415,6 +418,7 @@
     .gallery-item {
       position: relative;
       overflow: hidden;
+      cursor: zoom-in;
       border-radius: 12px;
       background: #102F3D;
       box-shadow: 0 18px 42px rgba(0,0,0,0.22);
@@ -544,6 +548,100 @@
       0% { box-shadow: 0 0 0 0 rgba(61,138,160,0.5), 0 10px 32px rgba(43,97,112,0.42); }
       70% { box-shadow: 0 0 0 18px rgba(61,138,160,0), 0 10px 32px rgba(43,97,112,0.42); }
       100% { box-shadow: 0 0 0 0 rgba(61,138,160,0), 0 10px 32px rgba(43,97,112,0.42); }
+    }
+
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-content {
+      animation: heroFade 1s ease both;
+    }
+
+    .hero-form {
+      animation: formFade 1s ease 0.18s both;
+    }
+
+    @keyframes heroFade {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes formFade {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 13, 20, 0.92);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 28px 90px rgba(0,0,0,0.48);
+      animation: lightboxZoom 0.28s ease both;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 32px;
+      cursor: pointer;
+      line-height: 1;
+      backdrop-filter: blur(12px);
+    }
+
+    @keyframes lightboxZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     @media (max-width: 980px) {
@@ -709,7 +807,7 @@
           
       </section>
 
-      <div class="feature-bar">
+      <div class="feature-bar reveal">
         <div class="container feature-grid">
           <div class="feature">
             <svg class="icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
@@ -742,7 +840,7 @@
         </div>
       </div>
 
-      <section class="light-section" id="places">
+      <section class="light-section reveal" id="places">
         <div class="container">
           <div class="section-head">
             <div>
@@ -813,7 +911,7 @@
         </div>
       </section>
 
-      <section class="gallery-section" id="gallery">
+      <section class="gallery-section reveal" id="gallery">
         <div class="container">
           <div class="section-head">
             <div>
@@ -824,19 +922,19 @@
           </div>
 
           <div class="gallery-grid">
-            <a class="gallery-item big" href="images/group-2.jpg" target="_blank"><img src="images/group-2.jpg" alt="Участники тура на Алтае"></a>
-            <a class="gallery-item tall" href="images/horses-1.jpg" target="_blank"><img src="images/horses-1.jpg" alt="Конная прогулка на Алтае"></a>
-            <a class="gallery-item" href="images/rafting-1.jpg" target="_blank"><img src="images/rafting-1.jpg" alt="Рафтинг на Алтае"></a>
-            <a class="gallery-item" href="images/group-1.jpg" target="_blank"><img src="images/group-1.jpg" alt="Группа в горах Алтая"></a>
-            <a class="gallery-item wide" href="images/lake-main.jpg" target="_blank"><img src="images/lake-main.jpg" alt="Телецкое озеро"></a>
-            <a class="gallery-item" href="images/rafting-2.jpg" target="_blank"><img src="images/rafting-2.jpg" alt="Группа на рафтинге"></a>
-            <a class="gallery-item" href="images/road.jpg" target="_blank"><img src="images/road.jpg" alt="Горная дорога Алтая"></a>
-            <a class="gallery-item wide" href="images/rafting-3.jpg" target="_blank"><img src="images/rafting-3.jpg" alt="Рафтинг на фоне гор"></a>
+            <div class="gallery-item big" data-full="images/group-2.jpg"><img src="images/group-2.jpg" alt="Участники тура на Алтае"></div>
+            <div class="gallery-item tall" data-full="images/horses-1.jpg"><img src="images/horses-1.jpg" alt="Конная прогулка на Алтае"></div>
+            <div class="gallery-item" data-full="images/rafting-1.jpg"><img src="images/rafting-1.jpg" alt="Рафтинг на Алтае"></div>
+            <div class="gallery-item" data-full="images/group-1.jpg"><img src="images/group-1.jpg" alt="Группа в горах Алтая"></div>
+            <div class="gallery-item wide" data-full="images/lake-main.jpg"><img src="images/lake-main.jpg" alt="Телецкое озеро"></div>
+            <div class="gallery-item" data-full="images/rafting-2.jpg"><img src="images/rafting-2.jpg" alt="Группа на рафтинге"></div>
+            <div class="gallery-item" data-full="images/road.jpg"><img src="images/road.jpg" alt="Горная дорога Алтая"></div>
+            <div class="gallery-item wide" data-full="images/rafting-3.jpg"><img src="images/rafting-3.jpg" alt="Рафтинг на фоне гор"></div>
           </div>
         </div>
       </section>
 
-      <section id="practices">
+      <section id="practices" class="reveal">
         <div class="container">
           <div class="section-head">
             <div>
@@ -881,7 +979,7 @@
         </div>
       </section>
 
-      <section class="cta" id="program">
+      <section class="cta reveal" id="program">
         <div class="container">
           <h2>Июль 2026. Бронирование открыто</h2>
           <p>Даты планируются в первой половине июля. Напишите Ирине, чтобы узнать условия, стоимость и забронировать место.</p>
@@ -889,7 +987,7 @@
         </div>
       </section>
     
-      <section class="light-section">
+      <section class="light-section reveal" id="contact">
         <div class="container">
           <div class="section-head">
             <div>
@@ -900,11 +998,11 @@
           </div>
 
           <div style="max-width:700px; margin:0 auto;">
-            <form class="hero-form" id="tgForm" style="background:#071A26; margin-top:0;">
+            <form class="hero-form" action="mailto:Iri-kuzmicheva@yandex.ru?subject=Заявка на тур Алтай" method="post" enctype="text/plain">
               <h3>Оставить заявку</h3>
-              <input type="text" id="nameInput" placeholder="Ваше имя" required>
-              <input type="tel" id="phoneInput" placeholder="Телефон" required>
-              <textarea id="messageInput" placeholder="Сообщение"></textarea>
+              <input type="text" name="Имя" placeholder="Ваше имя" required>
+              <input type="tel" name="Телефон" placeholder="Телефон" required>
+              <textarea name="Сообщение" placeholder="Сообщение"></textarea>
               <button class="btn" type="submit">Отправить</button>
             </form>
           </div>
@@ -923,25 +1021,62 @@
     </a>
   </div>
 
+  
+
   <script>
-    const tgForm = document.getElementById('tgForm');
+    const revealItems = document.querySelectorAll('.reveal');
 
-    tgForm.addEventListener('submit', function(event) {
-      event.preventDefault();
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
 
-      const name = document.getElementById('nameInput').value.trim();
-      const phone = document.getElementById('phoneInput').value.trim();
-      const message = document.getElementById('messageInput').value.trim();
+    revealItems.forEach((item) => revealObserver.observe(item));
 
-      const text =
-        'Здравствуйте, Ирина! Хочу узнать подробности про тур на Алтай.%0A%0A' +
-        'Имя: ' + encodeURIComponent(name) + '%0A' +
-        'Телефон: ' + encodeURIComponent(phone) + '%0A' +
-        'Сообщение: ' + encodeURIComponent(message || 'Интересуют даты, стоимость и условия участия.');
+    const galleryItems = document.querySelectorAll('.gallery-item[data-full]');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
 
-      window.open('https://t.me/irina810k?text=' + text, '_blank');
+    galleryItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.dataset.full;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
     });
   </script>
+
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" type="button" aria-label="Закрыть">×</button>
+    <img src="" alt="">
+  </div>
+
 </body>
 </html>
         </div>
