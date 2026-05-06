@@ -109,9 +109,10 @@
       box-shadow: 0 14px 40px rgba(42, 52, 45, 0.08);
     }
     .card span, .place span, .practice span {
-      font-size: 34px;
+      font-size: 30px;
       display: block;
-      margin-bottom: 12px;
+      margin-bottom: 18px;
+      opacity: 0.92;
     }
     .card h3, .place h3, .practice h3 {
       font-size: 22px;
@@ -393,12 +394,17 @@
         <h2 class="section-title">Локации и впечатления</h2>
         <p class="section-text">В программе — красивые природные места, мягкие прогулки, практики и живое соприкосновение с Алтаем.</p>
         <div class="places-grid">
-          <div class="place"><span>🌲</span><h3>300-летний кедр</h3><p>Рядом — святой источник преподобного Макария, освящённый в 1830 году. Сакральное и сильное место.</p></div>
-          <div class="place"><span>⛰</span><h3>Гора Тилан-Туу</h3><p>Одна из лучших смотровых площадок на Телецкое озеро. Рядом уютная чайная.</p></div>
-          <div class="place"><span>💧</span><h3>Водопады Третьей речки</h3><p>Экотропа через лес и воду. Красивый маршрут наедине с природой.</p></div>
-          <div class="place"><span>🚠</span><h3>Канатная дорога</h3><p>Подъём с панорамными видами и лёгкие прогулки по экотропе наверху.</p></div>
-          <div class="place"><span>🪨</span><h3>Каменные грибы</h3><p>Уникальное природное место. При доступности по сезону можно организовать экскурсию.</p></div>
-          <div class="place"><span>🖼</span><h3>Артыбаш</h3><p>Атмосферная галерея изделий местных мастеров и знакомство с творческой стороной Алтая.</p></div>
+          <div class="place"><span>🌲</span><h3>300-летний кедр</h3><p>Священное место Алтая и источник Макария. Пространство тишины и силы.</p></div>
+
+          <div class="place"><span>⛰</span><h3>Гора Тилан-Туу</h3><p>Панорамный вид на Телецкое озеро и атмосферная чайная среди гор.</p></div>
+
+          <div class="place"><span>💧</span><h3>Водопады Третьей речки</h3><p>Лесная экотропа, шум воды и ощущение полного контакта с природой.</p></div>
+
+          <div class="place"><span>🚠</span><h3>Канатная дорога</h3><p>Подъём над тайгой и прогулки по лёгким тропам с красивыми видами.</p></div>
+
+          <div class="place"><span>🪨</span><h3>Каменные грибы</h3><p>Редкое природное место Алтая с необычной энергетикой и атмосферой.</p></div>
+
+          <div class="place"><span>🎨</span><h3>Артыбаш</h3><p>Локальные мастера, изделия ручной работы и творческая атмосфера Алтая.</p></div>
         </div>
         <div class="highlight">Это путешествие не про спешку. Оно про баланс: практика, отдых, природа, внимание к себе и красота вокруг.</div>
       </div>
@@ -460,17 +466,13 @@
         <div>
           <h2 class="section-title">Бронирование открыто</h2>
           <p class="section-text">Напишите Ирине, чтобы узнать даты, стоимость, условия участия и забронировать место в группе.</p>
-          <div class="contacts-list">
-            <p>📞 <a href="tel:+79056233047">+7 905 623-30-47</a></p>
-            <p>💫 Ирина Кузьмичева — организатор</p>
-            <p>📍 Алтай | Телецкое озеро</p>
-          </div>
+          
         </div>
-        <form class="form-box">
-          <input type="text" placeholder="Ваше имя" required />
-          <input type="tel" placeholder="Телефон / WhatsApp" required />
-          <textarea placeholder="Напишите, что хотите узнать: даты, стоимость, формат участия"></textarea>
-          <button class="btn btn-primary" type="submit">Оставить заявку</button>
+        <form class="form-box" id="tgForm">
+          <input type="text" id="nameInput" placeholder="Ваше имя" required />
+          <input type="tel" id="phoneInput" placeholder="Телефон / WhatsApp" required />
+          <textarea id="messageInput" placeholder="Напишите, что хотите узнать: даты, стоимость, формат участия"></textarea>
+          <button class="btn btn-primary" type="submit">Отправить</button>
         </form>
       </div>
     </section>
@@ -484,5 +486,26 @@
     <span class="tg-icon">✈️</span>
     <span class="tg-text">Написать в Telegram</span>
   </a>
+
+  <script>
+    const tgForm = document.getElementById('tgForm');
+
+    tgForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('nameInput').value.trim();
+      const phone = document.getElementById('phoneInput').value.trim();
+      const message = document.getElementById('messageInput').value.trim();
+
+      const text =
+        'Здравствуйте, Ирина! Хочу узнать подробности про тур на Алтай.%0A%0A' +
+        'Имя: ' + encodeURIComponent(name) + '%0A' +
+        'Телефон / WhatsApp: ' + encodeURIComponent(phone) + '%0A' +
+        'Сообщение: ' + encodeURIComponent(message || 'Интересуют даты, стоимость и условия участия.');
+
+      window.open('https://t.me/irina810k?text=' + text, '_blank');
+    });
+  </script>
+
 </body>
 </html>
