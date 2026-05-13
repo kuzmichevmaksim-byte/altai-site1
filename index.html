@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Алтай в июле — Телецкое озеро | Места силы</title>
+  <title>Алтай в июле — Телецкое озеро | Deep Altai</title>
   <meta name="description" content="Тур по местам силы на Алтае: Телецкое озеро, практики, медитации, природа и спокойный формат путешествия." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,21 +22,21 @@
     }
 
     :root {
-      --deep: #F6F3EE;
-      --deep-2: #EFE9E1;
-      --deep-3: #E7DED3;
-      --lake: #3E6B77;
-      --lake-light: #5A8C98;
-      --mist: #FFFFFF;
-      --stone: #F3EEE8;
-      --text: #1C2A33;
-      --muted: rgba(28, 42, 51, 0.68);
-      --line: rgba(28,42,51,0.08);
+      --deep: #071A26;
+      --deep-2: #0B2634;
+      --deep-3: #102F3D;
+      --lake: #2B6170;
+      --lake-light: #3D8AA0;
+      --mist: #DCE3E6;
+      --stone: #ECE8E1;
+      --text: #F4F7F8;
+      --muted: rgba(244, 247, 248, 0.72);
+      --line: rgba(255,255,255,0.14);
     }
 
     body {
       font-family: 'Manrope', Arial, sans-serif;
-      background: #F6F3EE;
+      background: var(--deep);
       color: var(--text);
       line-height: 1.55;
     }
@@ -53,18 +53,23 @@
 
     .page-shell {
       background:
-        radial-gradient(circle at 70% 0%, rgba(90, 140, 152, 0.18), transparent 34%),
-        linear-gradient(180deg, #F6F3EE 0%, #EFE9E1 48%, #F6F3EE 100%);
+        radial-gradient(circle at 70% 0%, rgba(61, 138, 160, 0.22), transparent 34%),
+        linear-gradient(180deg, #071A26 0%, #091F2C 45%, #071A26 100%);
       min-height: 100vh;
     }
 
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 20;
-      padding: 34px 0;
+      padding: 18px 0;
+      background: rgba(7, 26, 38, 0.58);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      transition: background 0.3s ease, padding 0.3s ease;
     }
 
     .nav {
@@ -113,7 +118,7 @@
       display: flex;
       align-items: center;
       gap: 30px;
-      color: rgba(19,35,45,0.74);
+      color: rgba(255,255,255,0.82);
     }
 
     .menu a {
@@ -121,7 +126,7 @@
     }
 
     .menu a:hover {
-      color: #13232D;
+      color: #fff;
     }
 
     .nav-btn {
@@ -141,17 +146,31 @@
       padding: 140px 0 0;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(246,243,238,0.96) 0%, rgba(246,243,238,0.82) 36%, rgba(246,243,238,0.34) 72%, rgba(246,243,238,0.74) 100%),
+        linear-gradient(90deg, rgba(7,26,38,0.94) 0%, rgba(7,26,38,0.70) 38%, rgba(7,26,38,0.26) 72%, rgba(7,26,38,0.64) 100%),
         url('images/lake-main.jpg') center/cover;
     }
 
-    .hero::after {
-      content: "";
+    .hero-video {
       position: absolute;
-      inset: auto 0 0;
-      height: 170px;
-      background: linear-gradient(to top, #F6F3EE, transparent);
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(7,26,38,0.94) 0%, rgba(7,26,38,0.70) 38%, rgba(7,26,38,0.32) 72%, rgba(7,26,38,0.68) 100%),
+        radial-gradient(circle at 70% 12%, rgba(61,138,160,0.16), transparent 34%);
       pointer-events: none;
+    }
+
+    .hero::after {
+      display: none;
     }
 
     .hero-layout {
@@ -174,7 +193,7 @@
     }
 
     .eyebrow {
-      color: rgba(19,35,45,0.62);
+      color: rgba(255,255,255,0.75);
       font-size: 14px;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -188,13 +207,13 @@
       font-weight: 400;
       letter-spacing: -0.045em;
       margin-bottom: 28px;
-      color: #13232D;
+      color: #fff;
     }
 
     .hero p {
       max-width: 520px;
       font-size: 18px;
-      color: rgba(19,35,45,0.72);
+      color: rgba(255,255,255,0.82);
       margin-bottom: 30px;
     }
 
@@ -223,12 +242,12 @@
     }
 
     .hero-form {
-      background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(19,35,45,0.08);
+      background: rgba(7, 26, 38, 0.72);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 12px;
       padding: 34px;
       backdrop-filter: blur(18px);
-      box-shadow: 0 24px 70px rgba(28,42,51,0.12);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.34);
       margin-top: auto;
       align-self: flex-end;
       margin-bottom: 0;
@@ -239,16 +258,16 @@
       font-size: 27px;
       font-weight: 400;
       margin-bottom: 20px;
-      color: #13232D;
+      color: #fff;
       text-align: center;
     }
 
     .hero-form input,
     .hero-form textarea {
       width: 100%;
-      border: 1px solid rgba(19,35,45,0.08);
-      background: rgba(19,35,45,0.04);
-      color: #13232D;
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
       border-radius: 6px;
       padding: 14px 15px;
       margin-bottom: 12px;
@@ -264,7 +283,7 @@
 
     .hero-form input::placeholder,
     .hero-form textarea::placeholder {
-      color: rgba(19,35,45,0.44);
+      color: rgba(255,255,255,0.56);
     }
 
     .hero-form .btn {
@@ -276,10 +295,9 @@
       position: relative;
       z-index: 3;
       margin-top: -1px;
-      background: rgba(255,255,255,0.72);
-      border-top: 1px solid rgba(19,35,45,0.08);
-      border-bottom: 1px solid rgba(19,35,45,0.08);
-      box-shadow: 0 18px 60px rgba(28,42,51,0.06);
+      background: rgba(7, 26, 38, 0.96);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .feature-grid {
@@ -290,7 +308,7 @@
     .feature {
       padding: 44px 40px;
       text-align: center;
-      border-right: 1px solid rgba(19,35,45,0.08);
+      border-right: 1px solid rgba(255,255,255,0.08);
     }
 
     .feature:last-child {
@@ -301,13 +319,13 @@
       width: 44px;
       height: 44px;
       margin: 0 auto 18px;
-      color: rgba(19,35,45,0.78);
+      color: rgba(255,255,255,0.86);
       display: block;
     }
 
     .feature h3 {
       font-size: 16px;
-      color: #13232D;
+      color: #fff;
       margin-bottom: 8px;
       letter-spacing: 0.02em;
     }
@@ -316,7 +334,7 @@
       max-width: 240px;
       margin: 0 auto;
       font-size: 13px;
-      color: rgba(19,35,45,0.58);
+      color: rgba(255,255,255,0.62);
     }
 
     section {
@@ -346,17 +364,17 @@
       line-height: 0.98;
       font-weight: 400;
       letter-spacing: -0.04em;
-      color: #13232D;
+      color: #fff;
     }
 
     .lead {
-      color: rgba(19,35,45,0.68);
+      color: rgba(255,255,255,0.68);
       font-size: 18px;
       max-width: 660px;
     }
 
     .light-section {
-      background: #FFFFFF;
+      background: #DCE3E6;
       color: #071A26;
     }
 
@@ -406,7 +424,7 @@
     }
 
     .gallery-section {
-      background: #EEE7DD;
+      background: var(--deep);
     }
 
     .gallery-grid {
@@ -458,8 +476,8 @@
     }
 
     .practice {
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(19,35,45,0.08);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 12px;
       padding: 30px;
       min-height: 210px;
@@ -475,16 +493,16 @@
     .practice h3 {
       font-size: 22px;
       margin-bottom: 10px;
-      color: #13232D;
+      color: #fff;
     }
 
     .practice p {
-      color: rgba(19,35,45,0.64);
+      color: rgba(255,255,255,0.64);
     }
 
     .cta {
       background:
-        linear-gradient(rgba(246,243,238,0.86), rgba(246,243,238,0.92)),
+        linear-gradient(rgba(7, 26, 38, 0.80), rgba(7, 26, 38, 0.86)),
         url('images/road.jpg') center/cover;
       text-align: center;
     }
@@ -495,7 +513,7 @@
     }
 
     .cta p {
-      color: rgba(19,35,45,0.70);
+      color: rgba(255,255,255,0.72);
       max-width: 620px;
       margin: 0 auto 30px;
       font-size: 18px;
@@ -503,8 +521,8 @@
 
     footer {
       padding: 28px 0;
-      background: #E8E0D6;
-      color: rgba(19,35,45,0.60);
+      background: #06131C;
+      color: rgba(255,255,255,0.55);
       text-align: center;
       font-size: 14px;
     }
@@ -679,7 +697,7 @@
 
       .feature {
         border-right: none;
-        border-bottom: 1px solid rgba(19,35,45,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
       }
 
       .feature:last-child {
@@ -765,13 +783,6 @@
       min-height: 640px;
     }
 
-    @media (max-width: 980px) {
-      .hero-form-wrap {
-        min-height: auto;
-        justify-content: flex-start;
-      }
-    }
-
 </style>
 </head>
 
@@ -804,24 +815,19 @@
 
     <main>
       <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline poster="images/lake-main.jpg">
+          <source src="images/altai-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
         <div class="container hero-layout">
           <div class="hero-content">
             <div class="eyebrow">Июль • Телецкое озеро • места силы</div>
             <h1>Алтай.<br>Места силы</h1>
             <p>Путешествие для перезагрузки: природа, медитации, практики Ирины и спокойный ритм без дальних переездов.</p>
-            <a class="btn" href="#contact">Смотреть условия</a>
+            <a class="btn" href="https://t.me/irina810k" target="_blank">Смотреть условия</a>
           </div>
 
-          <div class="hero-form-wrap">
-            <form class="hero-form" action="mailto:Iri-kuzmicheva@yandex.ru?subject=Заявка на тур Алтай" method="post" enctype="text/plain">
-              <h3>Узнать условия тура</h3>
-              <input type="text" name="Имя" placeholder="Ваше имя" required>
-              <input type="tel" name="Телефон" placeholder="Телефон" required>
-              <textarea name="Сообщение" placeholder="Сообщение"></textarea>
-              <button class="btn" type="submit">Отправить заявку</button>
-            </form>
-          </div>
-        </div>
+          
       </section>
 
       <div class="feature-bar reveal">
@@ -1040,12 +1046,19 @@
 
   
 
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" type="button" aria-label="Закрыть">×</button>
-    <img src="" alt="">
-  </div>
-
   <script>
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.style.background = 'rgba(7, 26, 38, 0.82)';
+        header.style.padding = '14px 0';
+      } else {
+        header.style.background = 'rgba(7, 26, 38, 0.58)';
+        header.style.padding = '18px 0';
+      }
+    });
+
     const revealItems = document.querySelectorAll('.reveal');
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -1061,37 +1074,44 @@
 
     const galleryItems = document.querySelectorAll('.gallery-item[data-full]');
     const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
 
-    if (lightbox) {
-      const lightboxImg = lightbox.querySelector('img');
-      const lightboxClose = lightbox.querySelector('.lightbox-close');
-
-      galleryItems.forEach((item) => {
-        item.addEventListener('click', () => {
-          lightboxImg.src = item.dataset.full;
-          lightbox.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
+    galleryItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.dataset.full;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
       });
+    });
 
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        lightboxImg.src = '';
-        document.body.style.overflow = '';
-      }
-
-      lightboxClose.addEventListener('click', closeLightbox);
-
-      lightbox.addEventListener('click', (event) => {
-        if (event.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeLightbox();
-      });
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
     }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
   </script>
 
 
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" type="button" aria-label="Закрыть">×</button>
+    <img src="" alt="">
+  </div>
+
 </body>
 </html>
+        </div>
